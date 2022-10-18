@@ -1,4 +1,5 @@
 from lib2to3.pgen2 import driver
+import time
 from selenium.webdriver.support import expected_conditions as EC
 import  selenium
 
@@ -19,7 +20,8 @@ class SeleniumScrape():
 
     def gettingDownloadingFile(self,href):
         
-        self.driver.get("https://www.pdfdrive.com/"+href)
+        self.driver.get("https://www.pdfdrive.com"+href)
+        time.sleep(10)
         return self.driver.page_source
 
     def driver_quit(self):
